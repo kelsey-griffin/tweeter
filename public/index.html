@@ -43,15 +43,15 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form>
+        <form method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <button type="submit">Tweet</button>
+          <button type="submit">Send Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </form>
       </section>
+      <br>
       <div>
-
         Stars shining bright above you
         Night breezes seem to whisper "I love you"
         Birds singing in the sycamore tree
