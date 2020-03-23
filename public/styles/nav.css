@@ -12,5 +12,6 @@ nav {
   float: right;
 }
 .nav_title {
+  float: left;
   font-family: 'Bungee', sans-serif;
 }
