@@ -22,8 +22,8 @@ body {
 }
 
 main {
+  position: relative;
+  margin: auto;
   width: 90%;
   background-color: #f4f1ec;
-  position: relative;
-  text-align: center;
 }
