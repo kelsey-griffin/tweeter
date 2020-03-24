@@ -1,4 +1,4 @@
-header {
+body>header:first-of-type {
   z-index: 2;
   margin-top: 120px;
   height: 400px;
