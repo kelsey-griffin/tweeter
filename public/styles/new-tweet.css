@@ -9,6 +9,7 @@ button {
 }
 textarea {
   height: 40px;
+  overflow: hidden;
   border-style: none;
   border-bottom: 5px solid #545149;
   width: 100%; 
@@ -25,4 +26,8 @@ output {
   margin-top: 10px;
   font-family: 'Bungee', 'sans-sarif';
   float: right;
+}
+
+.negative {
+  color: tomato;
 }
