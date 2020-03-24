@@ -1,0 +1,28 @@
+.new-tweet {
+ text-align: left;
+}
+button {
+  margin-top: 10px;
+  background-color: #4056A1;
+  color: #f4f1ec;
+  font-family: 'Bungee', 'sans-sarif';
+}
+textarea {
+  height: 40px;
+  border-style: none;
+  border-bottom: 5px solid #545149;
+  width: 100%; 
+  outline: none;
+  background-color: #f4f1ec;
+  resize: none;
+}
+::placeholder {
+  font-family: 'Source Sans Pro', 'sans-serif';
+  font-style: italic;
+  font-weight: bold;
+}
+output {
+  margin-top: 10px;
+  font-family: 'Bungee', 'sans-sarif';
+  float: right;
+}
