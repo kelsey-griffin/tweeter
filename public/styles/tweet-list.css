@@ -13,12 +13,29 @@ article {
   box-shadow: cornflowerblue 5px 5px;
   text-shadow: 1px 1px;
 }
-.handle {
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+article.tweet header div.user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+article.tweet header.handle {
   margin: 20px;
   font-size: 40px;
   float: right;
+  /* display: none; */
+}
+.uncover .handle:hover {
+  display: block;
 }
 .avatar {
+  width: 86px;
+  height: 86px;
   padding: 0;
   font-size: 75px;
 }
