@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-list.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,7 +23,6 @@
   </head>
 
   <body>
-
     <header>
           <!-- Top nav bar (fixed) -->
     <nav>
@@ -41,43 +41,40 @@
           <h2>Kelsey</h2>
       </div>
   </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
-          <textarea placeholder= "What are you humming about?" name="text" id="tweet-text"></textarea>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </form>
-      </section>
-      <p>
-
-        Stars shining bright above you
-        Night breezes seem to whisper "I love you"
-        Birds singing in the sycamore tree
-        Dream a little dream of me
-        Say "Night-ie night" and kiss me
-        Just hold me tight and tell me you'll miss me
-        While I'm alone and blue as can be
-        Dream a little dream of me
-        Stars fading, but I linger on, dear
-        Still craving your kiss
-        I'm longing to linger till dawn, dear
-        Just saying this
-        Sweet dreams till sunbeams find you
-        Sweet dreams that leave all worries behind you
-        But in your dreams whatever they be
-        Dream a little dream of me
-        Stars fading, but I linger on, dear
-        Still craving your kiss
-        I'm longing to linger till dawn, dear
-        Just saying this
-        Sweet dreams till sunbeams find you
-        Sweet dreams that leave all worries far behind you
-        But in your dreams whatever they be
-        Dream a little dream of me  
-      </p>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action="/tweets/">
+        <textarea placeholder= "What are you humming about?" name="text" id="tweet-text"></textarea>
+        <button type="submit">Tweet</button>
+        <output name="counter" class="counter" for="tweet-text">140</output>
+      </form>
+    </section>
+    <section id="tweet-container">
+      <article>
+        <header>
+          <span class= "avatar">&#128126</span>
+          <span class= "name">Kelsey</span>
+          <span class= "handle">@Kelsey </span>
+        </header>
+        <p class="tweet-content">content of tweet</p>
+        <footer>
+          <span class= "date-created"> 10 Days Ago</span>
+          <span class="icons">&#127988 &#128257 &#128153</span>
+        </footer>
+      </article>
+    </section>
+    <br>
+    placeholder text<br>
+    placeholder text<br>
+    placeholder text<br>
+    placeholder text<br>
+    placeholder text<br>
+    placeholder text<br>
+    placeholder text<br>
+    placeholder text<br>
+    placeholder text
     </main>
   </body>
 </html>
