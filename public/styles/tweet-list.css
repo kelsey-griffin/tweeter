@@ -1,0 +1,39 @@
+#tweet-container {
+  position: relative;
+  margin: auto;
+  border-style: solid;
+}
+article:hover {
+  box-shadow: cornflowerblue 5px;
+}
+article {
+  padding: 20px;
+  background-color: #f4f1ec;
+  border: 3px solid #545149;
+  height: 280px;
+}
+.handle {
+  margin: 20px;
+  font-size: 40px;
+  float: right;
+}
+.avatar {
+  padding: 0;
+  font-size: 75px;
+}
+.name {
+  margin: 20px;
+  font-size: 40px;
+}
+.tweet-content{
+  font-size: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid 5px;
+}
+.icons {
+  float: right;
+  filter: grayscale(100%);
+}
+footer {
+  padding-bottom: 20px;
+}
