@@ -21,6 +21,7 @@ article.tweet header div.user-info {
   align-items: center;
 }
 .handle {
+  color: cornflowerblue;
   margin: 20px;
   font-size: 40px;
   float: right;
