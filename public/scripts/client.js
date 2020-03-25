@@ -44,15 +44,22 @@ $(document).ready(function() {
   loadTweets();
   $("#new-tweet-form").on("submit", function(e) {
     e.preventDefault();
-    console.log($('#new-tweet-form'))
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $(this).serialize()
-    })
-    .then(response => {
-      console.log("RESPONSE: ");
-      console.log(response);
-    })
+    if ($('#tweet-text').val()) {
+      if ($('#tweet-text').val().length <= 140) {
+        $.ajax({
+          url: '/tweets',
+          method: 'POST',
+          data: $(this).serialize()
+        })
+        .then(response => {
+          console.log("RESPONSE: ");
+          console.log(response);
+        })
+      } else {
+        alert("You've lot a lot to say!\nTweet must be less than or equal to 140 characters.")
+      }
+    } else {
+      alert("Cat got your tongue?\nEmpty tweets are not posted.")
+    }
   })
 });
