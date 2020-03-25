@@ -4,7 +4,7 @@ $(document).ready(function() {
     const { name, avatars, handle } = data.user;
     const text = data.content.text;
     const fullDate = new Date(data.created_at);
-    const date = fullDate.getUTCMonth() + "/" + fullDate.getUTCDate() + "/" + fullDate.getFullYear();
+    const date = (fullDate.getUTCMonth() + 1) + "/" + fullDate.getUTCDate() + "/" + fullDate.getFullYear();
     const $markup = `
     <article class= "tweet">
     <header>
