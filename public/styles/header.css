@@ -7,6 +7,7 @@ body>header:first-of-type {
   background-color: orange;
   background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
-.avatar {
+.big-avatar {
+  margin-top: 2rem;
   width: 250px;
 }
