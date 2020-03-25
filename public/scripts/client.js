@@ -29,31 +29,34 @@ $(document).ready(function() {
     for (element of tweets) {
       listOfTweets.push(createTweetElement(element));
     }
-    $("#tweet-container").append(listOfTweets.join(' '));
+    $('#tweet-container').empty();
+    $("#tweet-container").append(listOfTweets.reverse().join(' '));
   }
   const loadTweets = () => {
     $.ajax({
       url: '/tweets/', 
       method: 'GET',
-      dataType: 'json' 
-    })   
-    .then(response => {
-     renderTweets(response);
-    }) 
+      dataType: 'json',
+      success: response => {
+        renderTweets(response);
+        console.log("in load tweets")
+      } 
+    })
   }
   loadTweets();
   $("#new-tweet-form").on("submit", function(e) {
     e.preventDefault();
     if ($('#tweet-text').val()) {
       if ($('#tweet-text').val().length <= 140) {
+        // console.log(loadTweets())
         $.ajax({
-          url: '/tweets',
-          method: 'POST',
-          data: $(this).serialize()
-        })
-        .then(response => {
-          console.log("RESPONSE: ");
-          console.log(response);
+          url: '/tweets/',
+          type: 'POST',
+          data: $(this).serialize(),
+          complete: () => {
+            // console.log("success form")
+            loadTweets();
+          }
         })
       } else {
         alert("You've lot a lot to say!\nTweet must be less than or equal to 140 characters.")
