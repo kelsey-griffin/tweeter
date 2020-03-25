@@ -1,7 +1,9 @@
 $(document).ready(function() {
-  console.log("in client js")
   const createTweetElement = data => {
     const { name, avatars, handle } = data.user;
+    const text = data.content.text;
+    const fullDate = new Date(data.created_at);
+    const date = fullDate.getUTCMonth() + "/" + fullDate.getUTCDate() + "/" + fullDate.getFullYear();
     const $markup = `
     <article class= "tweet">
       <header>
@@ -11,9 +13,9 @@ $(document).ready(function() {
         </div>
         <span class= "handle">${handle}</span>
       </header>
-      <p class="tweet-content">${data.content}</p>
+      <p class="tweet-content">${text}</p>
       <footer>
-        <span class= "date-created">Tweeted on: ${Date(data.created_at)}</span>
+        <span class= "date-created">Tweeted on: ${date}</span>
         <span class="icons">&#127988 &#128257 &#128153</span>
       </footer>
     </article>
@@ -21,13 +23,13 @@ $(document).ready(function() {
     return $markup;
   }
 
-// const renderTweets = tweets => {
-//   for (element of tweets) {
-//     const $tweet = createTweetElement(element);
-//     $("#tweet-container").append($tweet);
-//     console.log(createTweetElement(element));
-//   }
-// }
+  const renderTweets = tweets => {
+    for (element of tweets) {
+      const $tweet = createTweetElement(element);
+      $("#tweet-container").append($tweet);
+      console.log(createTweetElement(element));
+    }
+  }
 
 
 // Fake data taken from initial-tweets.json
@@ -69,9 +71,10 @@ const data = [
     "created_at": 1461116232227
 }
 
-  const $tweet = createTweetElement(tweetData);
+renderTweets(data);
+//   const $tweet = createTweetElement(tweetData);
 
-// Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
-  $('#tweets-container').append($tweet);
+// // Test / driver code (temporary)
+//   console.log($tweet); // to see what it looks like
+//   $('#tweet-container').append($tweet);
 });
