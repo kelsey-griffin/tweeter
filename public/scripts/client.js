@@ -42,16 +42,17 @@ $(document).ready(function() {
     }) 
   }
   loadTweets();
-  });
-$("#new-tweet-form").on("submit", function(e) {
-  e.preventDefault();
-  $.ajax({
-    url: '/tweets/',
-    method: 'POST',
-    data: $(this).serialize()
+  $("#new-tweet-form").on("submit", function(e) {
+    e.preventDefault();
+    console.log($('#new-tweet-form'))
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize()
+    })
+    .then(response => {
+      console.log("RESPONSE: ");
+      console.log(response);
+    })
   })
-  .then(response => {
-    console.log("RESPONSE: ");
-    console.log(response);
-  })
-})
+});
