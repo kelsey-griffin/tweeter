@@ -60,7 +60,6 @@ $(document).ready(function() {
     e.preventDefault();
     const checkTweetValidity = () => {
       const length = $('#tweet-text').val().length;
-      console.log(typeof length,":", length)
       $('#message-box').removeClass('#error').slideUp();
       //if tweet is too long, reject
       if (length > 140) {
