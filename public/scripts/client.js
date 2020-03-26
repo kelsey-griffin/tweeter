@@ -60,11 +60,12 @@ $(document).ready(function() {
     e.preventDefault();
     const checkTweetValidity = () => {
       const length = $('#tweet-text').val().length;
+      console.log(typeof length,":", length)
       $('#message-box').removeClass('#error').slideUp();
       //if tweet is too long, reject
       if (length > 140) {
         $('#message-box').addClass('#error').slideDown();
-        $('section.#message-box')[0].innerText = "🚩 You've lot a lot to say! 🚩\nTweet must be less than or equal to 140 characters.";
+        $('#message-box')[0].innerText = "🚩 You've lot a lot to say! 🚩\nTweet must be less than or equal to 140 characters.";
         return false;
       //if tweet is empty, reject
       } else if (length === 0) {
