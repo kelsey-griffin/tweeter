@@ -64,12 +64,12 @@ $(document).ready(function() {
       //if tweet is too long, reject
       if (length > 140) {
         $('#message-box').addClass('#error').slideDown();
-        $('#message-box')[0].innerText = "🚩 You've lot a lot to say! 🚩\nTweet must be less than or equal to 140 characters.";
+        $('#message-box')[0].innerText = "🚩  You've lot a lot to say! Tweet must be less than or equal to 140 characters.";
         return false;
       //if tweet is empty, reject
       } else if (length === 0) {
         $('#message-box').addClass('#error').slideDown();
-        $('#message-box')[0].innerText = "🚩 Cat got your tongue? 🚩\nEmpty tweets are not posted.";
+        $('#message-box')[0].innerText = "🚩  Cat got your tongue? Empty tweets are not posted.";
         return false;
       
       } else return true;
@@ -83,6 +83,8 @@ $(document).ready(function() {
           loadTweets();
         }
       })
+      //on successful tweet submission, clean textbox for next tweet
+      $('#tweet-text').val('');
     }
   })
 });
