@@ -46,7 +46,6 @@ $(document).ready(function() {
       dataType: 'json',
       success: response => {
         renderTweets(response);
-        console.log("in load tweets")
       } 
     })
   }
@@ -55,28 +54,26 @@ $(document).ready(function() {
     e.preventDefault();
     const checkTweetValidity = () => {
       const length = $('#tweet-text').val().length;
-      console.log($('section.error-msg')[0].innerText)
-      $('#error-msg').removeClass('error').slideDown(300);
+      $('#message-box').removeClass('#error').slideUp();
+      
       if (length > 140) {
-        $('#error-msg').addClass('error');
-        $('section.error-msg')[0].innerText = "You've lot a lot to say!\nTweet must be less than or equal to 140 characters.";
+        $('#message-box').addClass('#error').slideDown();
+        $('section.#message-box')[0].innerText = "🚩 You've lot a lot to say! 🚩\nTweet must be less than or equal to 140 characters.";
         return false;
-        
+
       } else if (length === 0) {
-        $('#error-msg').addClass('error');
-        $('section.error-msg')[0].innerText = "Cat got your tongue? Empty tweets are not posted.";
+        $('#message-box').addClass('#error').slideDown();
+        $('#message-box')[0].innerText = "🚩 Cat got your tongue? 🚩\nEmpty tweets are not posted.";
         return false;
       
       } else return true;
     }
-    console.log(checkTweetValidity())
     if (checkTweetValidity()) {
       $.ajax({
         url: '/tweets/',
         type: 'POST',
         data: $(this).serialize(),
         complete: () => {
-          // console.log("success form")
           loadTweets();
         }
       })
