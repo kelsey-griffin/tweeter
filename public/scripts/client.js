@@ -61,7 +61,7 @@ $(document).ready(function() {
         $('#error-msg').addClass('error');
         $('section.error-msg')[0].innerText = "You've lot a lot to say!\nTweet must be less than or equal to 140 characters.";
         return false;
-      
+        
       } else if (length === 0) {
         $('#error-msg').addClass('error');
         $('section.error-msg')[0].innerText = "Cat got your tongue? Empty tweets are not posted.";

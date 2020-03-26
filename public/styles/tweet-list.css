@@ -2,6 +2,17 @@
   position: relative;
   margin: auto;
 }
+section.error-msg {
+  width: auto;
+  height: auto;
+  text-align: center;
+  margin: 1em;
+  border: solid red;
+  font-size: 2rem;
+}
+section.error-msg:error {
+  display: inline-block;
+}
 article.tweet {
   margin-bottom: 2em;
   padding: 20px;
@@ -52,6 +63,7 @@ article.tweet header div.user-info {
 .icons {
   float: right;
   filter: grayscale(100%);
+  font-size: 2.5rem;
 }
 footer {
   padding-bottom: 20px;
