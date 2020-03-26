@@ -19,11 +19,41 @@ body {
   background-color: #f4f1ec;
   font-size: 1.5em;
   font-family: 'Source Sans Pro', 'sans-serif';
+
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 main {
-  position: relative;
   margin: auto;
   width: 90%;
   background-color: #f4f1ec;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+ 
+  body>header.user-header {
+    margin-top: 9em;
+    margin-left: 2em;
+    width: 25%;
+    height: 40vh;
+  }
+  main.container {
+    padding-top: 2em;
+    padding-left: 2em;
+    margin-top: 5em;
+    width: 65%;
+  }
+}
+@media (min-width: 1024px) {
+  main.container {
+    justify-content: right;
+  }
 }
