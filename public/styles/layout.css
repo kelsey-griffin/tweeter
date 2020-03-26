@@ -32,28 +32,25 @@ main {
   background-color: #f4f1ec;
 }
 
+/*media query for screens greater than 768px*/
 @media (min-width: 768px) {
   body {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
- 
+  .big-avatar {
+    width: 100%;
+  }
   body>header.user-header {
     margin-top: 9em;
     margin-left: 2em;
     width: 25%;
-    height: 40vh;
   }
   main.container {
     padding-top: 2em;
     padding-left: 2em;
     margin-top: 5em;
     width: 65%;
-  }
-}
-@media (min-width: 1024px) {
-  main.container {
-    justify-content: right;
   }
 }
