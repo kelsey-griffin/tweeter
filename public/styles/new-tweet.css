@@ -2,11 +2,12 @@
  text-align: left;
 }
 button {
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 1em;
   background-color: #4056A1;
   color: #f4f1ec;
   font-family: 'Bungee', 'sans-sarif';
+  height: 2em;
+  width: 5em;
 }
 button:hover {
   background-color: orange;
@@ -14,10 +15,9 @@ button:hover {
   color: #545149;
 }
 textarea {
-  height: 40px;
   overflow: hidden;
   border-style: none;
-  border-bottom: 5px solid #545149;
+  border-bottom: 0.2em solid #545149;
   width: 100%; 
   outline: none;
   background-color: #f4f1ec;
@@ -29,9 +29,9 @@ textarea {
   font-weight: bold;
 }
 output {
-  margin-top: 10px;
   font-family: 'Bungee', 'sans-sarif';
   float: right;
+  font-size: 1.5em;
 }
 /*if > 140 char in tweet, color === red */
 .negative {
