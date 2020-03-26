@@ -2,16 +2,15 @@
   position: relative;
   margin: auto;
 }
-section.error-msg {
-  width: auto;
-  height: auto;
-  text-align: center;
-  margin: 1em;
-  border: solid red;
+#message-box {
+  display: none;
+  margin: 1em auto;
+  border: solid rgb(172, 1, 1);
   font-size: 2rem;
+  text-align: center;
 }
-section.error-msg:error {
-  display: inline-block;
+#message-box #error {
+  display: block;
 }
 article.tweet {
   margin-bottom: 2em;
