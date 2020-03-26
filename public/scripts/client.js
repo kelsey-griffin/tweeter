@@ -54,22 +54,22 @@ $(document).ready(function() {
   }
   //call loadTweets
   loadTweets();
-
+  
   //when form is submitted, validate tweet and either load or send error
   $("#new-tweet-form").on("submit", function(e) {
     e.preventDefault();
+    $('#message-box').removeClass('#error');
     const checkTweetValidity = () => {
       const length = $('#tweet-text').val().length;
-      $('#message-box').removeClass('#error').slideUp();
       //if tweet is too long, reject
       if (length > 140) {
-        $('#message-box').addClass('#error').slideDown();
-        $('#message-box')[0].innerText = "🚩  You've lot a lot to say! Tweet must be less than or equal to 140 characters.";
+        $('#message-box')[0].innerText = "🚩  You've lot a lot to say!\nTweet must be less than or equal to 140 characters.";
+        $('#message-box').addClass('#error').slideDown('slow').delay(1500).slideUp('slow');
         return false;
       //if tweet is empty, reject
       } else if (length === 0) {
-        $('#message-box').addClass('#error').slideDown();
         $('#message-box')[0].innerText = "🚩  Cat got your tongue? Empty tweets are not posted.";
+        $('#message-box').addClass('#error').slideDown('slow').delay(1500).slideUp('slow');
         return false;
       
       } else return true;
