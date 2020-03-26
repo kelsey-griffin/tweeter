@@ -5,6 +5,7 @@
 /*should only appear when there is an error*/
 #message-box {
   display: none;
+  padding: 1em;
   margin: 1em auto;
   border: solid rgb(172, 1, 1);
   font-size: 2rem;
@@ -15,9 +16,9 @@
 }
 article.tweet {
   margin-bottom: 2em;
-  padding: 20px;
+  padding: 1em;
   background-color: #f4f1ec;
-  border: 3px solid #545149;
+  border: .2em solid #545149;
   height: auto;
 }
 article.tweet header {
@@ -34,37 +35,35 @@ article.tweet header div.user-info {
 .handle {
   color: cornflowerblue;
   opacity: 60%;
-  margin: 20px;
-  font-size: 40px;
+  margin-top: 1em;
+  margin-right: 1em;
+  font-size: 1.7em;
   float: right;
   display: none;
 }
 #tweet-container article.tweet:hover {
-  box-shadow: cornflowerblue 5px 5px;
-  text-shadow: 1px 1px;
+  box-shadow: cornflowerblue .3em .3em;
+  text-shadow: 0.05em 0.05em;
 }
 #tweet-container article.tweet:hover .handle {
   display: inline;
 }
 #tweet-container article.tweet .avatar {
-  width: 86px;
-  height: 86px;
-  padding: 0;
-  font-size: 75px;
+  padding: .2em;
+  font-size: 4em;
 }
 .name {
-  font-size: 40px;
+  font-size: 1.7em;
 }
 .tweet-content{
-  font-size: 30px;
-  padding-bottom: 30px;
-  border-bottom: solid 5px;
+  font-size: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: solid .15em;
 }
 .icons {
   float: right;
-  filter: grayscale(100%);
-  font-size: 2.5rem;
 }
 footer {
-  padding-bottom: 20px;
+  font-size: 1.2em;
+  padding-bottom: 1em;
 }
