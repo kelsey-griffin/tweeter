@@ -1,7 +1,7 @@
-body>header:first-of-type {
+header.user-header {
   z-index: 2;
   margin-top: 5em;
-  height: 16em;
+  height: 60%;
   text-align: center;
   width: 100%;
   background-color: orange;
@@ -9,5 +9,4 @@ body>header:first-of-type {
 }
 .big-avatar {
   margin-top: 2rem;
-  width: 10em;
 }
