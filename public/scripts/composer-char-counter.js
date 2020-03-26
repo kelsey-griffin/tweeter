@@ -1,5 +1,5 @@
 $().ready(function() {
-  console.log("*~ready~*");
+  //
   $('#tweet-text').keyup(function() {
     const currentLength = this.value.length;
     const remainingChars = $(this).siblings(".counter")[0];

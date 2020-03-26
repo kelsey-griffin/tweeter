@@ -1,17 +1,19 @@
 $(document).ready(function() {
-
+  
+  //use form data to build tweet element 
   const createTweetElement = data => {
-
+    //safeguard agains XSS, escape userEnteredText
     const escape =  function(str) {
       let p = document.createElement('p');
       p.appendChild(document.createTextNode(str));
       return p.innerHTML;
     }
-
     const { name, avatars, handle } = data.user;
     const text = data.content.text;
     const fullDate = new Date(data.created_at);
     const date = (fullDate.getUTCMonth() + 1) + "/" + fullDate.getUTCDate() + "/" + fullDate.getFullYear();
+    
+    //framework for each tweet in tweet list
     const $markup = `
       <article class= "tweet">
         <header>
@@ -30,7 +32,7 @@ $(document).ready(function() {
       `;
     return $markup;
   }
-  
+  //make a list of tweets (newest to oldest), append to tweet container
   const renderTweets = tweets => {
     const listOfTweets = [];
     for (element of tweets) {
@@ -39,6 +41,7 @@ $(document).ready(function() {
     $('#tweet-container').empty();
     $("#tweet-container").append(listOfTweets.reverse().join(' '));
   }
+  //ajax get request for list of tweets
   const loadTweets = () => {
     $.ajax({
       url: '/tweets/', 
@@ -49,18 +52,21 @@ $(document).ready(function() {
       } 
     })
   }
+  //call loadTweets
   loadTweets();
+
+  //when form is submitted, validate tweet and either load or send error
   $("#new-tweet-form").on("submit", function(e) {
     e.preventDefault();
     const checkTweetValidity = () => {
       const length = $('#tweet-text').val().length;
       $('#message-box').removeClass('#error').slideUp();
-      
+      //if tweet is too long, reject
       if (length > 140) {
         $('#message-box').addClass('#error').slideDown();
         $('section.#message-box')[0].innerText = "🚩 You've lot a lot to say! 🚩\nTweet must be less than or equal to 140 characters.";
         return false;
-
+      //if tweet is empty, reject
       } else if (length === 0) {
         $('#message-box').addClass('#error').slideDown();
         $('#message-box')[0].innerText = "🚩 Cat got your tongue? 🚩\nEmpty tweets are not posted.";

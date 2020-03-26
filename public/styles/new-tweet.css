@@ -33,7 +33,7 @@ output {
   font-family: 'Bungee', 'sans-sarif';
   float: right;
 }
-
+/*if > 140 char in tweet, color === red */
 .negative {
   color: tomato;
 }

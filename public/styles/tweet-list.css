@@ -2,6 +2,7 @@
   position: relative;
   margin: auto;
 }
+/*should only appear when there is an error*/
 #message-box {
   display: none;
   margin: 1em auto;
