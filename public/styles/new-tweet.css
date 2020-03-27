@@ -1,6 +1,7 @@
 .new-tweet {
  text-align: left;
  display: none;
+ margin-bottom: 1em;
 }
 .new-tweet #show {
   display: block;
