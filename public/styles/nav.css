@@ -17,11 +17,17 @@ nav {
   float: left;
   font-family: 'Bungee', sans-serif;
 }
+.nav_title:hover {
+  color: orange;
+}
 nav button.compose-tweet {
   font-size: 2em;
+  border: orange solid .1em;
 }
 nav button.compose-tweet:hover {
   background-color: orange;
   background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
-  color: #545149;
+  color: #ffffff;
+  border: #545149 solid .1em;
+
 }
