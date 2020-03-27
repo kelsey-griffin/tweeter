@@ -55,6 +55,16 @@ $(document).ready(function() {
   //call loadTweets
   loadTweets();
   
+  //button to reveal hidden new-tweet element or vice versa
+  $(".compose-tweet").click(function() {
+    if ($(".new-tweet").hasClass("#show")) {
+      $(".new-tweet").removeClass("#show").slideUp('slow');
+    } else {
+      $(".new-tweet").addClass("#show").slideDown('slow');
+      $("#new-tweet-form textarea").focus();
+    }
+  })
+    
   //when form is submitted, validate tweet and either load or send error
   $("#new-tweet-form").on("submit", function(e) {
     e.preventDefault();
