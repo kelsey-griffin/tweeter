@@ -8,9 +8,6 @@ nav {
   z-index: 3;
   padding: 1.5em;
 }
-.right {
-  float: right;
-}
 .nav_title {
   padding-top: .2em;
   font-size: 1.5em;
@@ -21,6 +18,7 @@ nav {
   color: orange;
 }
 nav button.compose-tweet {
+  float: right;
   font-size: 2em;
   border: orange solid .1em;
 }
