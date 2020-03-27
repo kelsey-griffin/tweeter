@@ -60,6 +60,7 @@ article.tweet header div.user-info {
   padding-bottom: 1em;
   border-bottom: solid .15em;
 }
+/*long tweets need to wrap around*/
 p {
   word-break: break-all;
   white-space: normal;
