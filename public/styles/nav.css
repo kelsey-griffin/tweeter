@@ -12,6 +12,16 @@ nav {
   float: right;
 }
 .nav_title {
+  padding-top: .2em;
+  font-size: 1.5em;
   float: left;
   font-family: 'Bungee', sans-serif;
+}
+nav button.compose-tweet {
+  font-size: 2em;
+}
+nav button.compose-tweet:hover {
+  background-color: orange;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+  color: #545149;
 }
