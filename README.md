@@ -18,6 +18,8 @@ Single Page Interface utilizing:
   - AJAX Post and Get requests
   - Responsive Design elements for mobile view and desktop  
 
+!["Screenshot of mobile layout"](https://github.com/kelsey-griffin/tweeter/blob/master/docs/tweeter-mobile-view.png)
+
 After loading the page for the first time, the user will be met with a few sample tweets, the user avatar, and a navigation bar. Selecting the button in the top right, `✍︎`, will reveal and focus the user on a form for entering new tweets. Clicking the button again will hide the form.
 
 #### Simply type and press tweet! 
@@ -29,6 +31,10 @@ A temporary error message will appear within the page if tweet is too long or if
 Cross-site scripting prevention methods in place - so don't bother with any funny business! 
 
 Once the form is submitted, it is cleared, the counter is reset, and the user is refocused to the tweet form. All set for another tweet!
+
+!["Screen recording of tweeter page flow"](https://github.com/kelsey-griffin/tweeter/blob/master/docs/tweeter-walkthrough.gif)
+
+Enjoy!
 
 ## Dependencies
 
