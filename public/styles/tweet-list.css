@@ -60,6 +60,10 @@ article.tweet header div.user-info {
   padding-bottom: 1em;
   border-bottom: solid .15em;
 }
+p {
+  word-break: break-all;
+  white-space: normal;
+}
 .icons {
   float: right;
 }
