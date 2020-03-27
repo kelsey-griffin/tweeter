@@ -1,5 +1,9 @@
 .new-tweet {
  text-align: left;
+ display: none;
+}
+.new-tweet #show {
+  display: block;
 }
 #new-tweet-form button {
   margin-bottom: 1em;
