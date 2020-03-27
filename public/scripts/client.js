@@ -93,8 +93,10 @@ $(document).ready(function() {
           loadTweets();
         }
       })
-      //on successful tweet submission, clean textbox for next tweet
+      //on successful tweet submission, clear textbox, focus back, and reset counter
       $('#tweet-text').val('');
+      $("#new-tweet-form textarea").focus();
+      $('.counter').val('140');
     }
   })
 });
