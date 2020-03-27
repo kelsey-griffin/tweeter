@@ -1,17 +1,21 @@
 $(document).ready(function() {
-  
-  //use form data to build tweet element 
+
+  //use form data to build tweet element
   const createTweetElement = data => {
     //safeguard agains XSS, escape userEnteredText
     const escape =  function(str) {
       let p = document.createElement('p');
       p.appendChild(document.createTextNode(str));
       return p.innerHTML;
-    }
+    };
     const { name, avatars, handle } = data.user;
     const text = data.content.text;
     const fullDate = new Date(data.created_at);
     const date = (fullDate.getUTCMonth() + 1) + "/" + fullDate.getUTCDate() + "/" + fullDate.getFullYear();
+    
+    //found a cool library to format the dates but didn't have time to
+    //figure out how to use it with jquery, html etc. Will revisit later.
+    // const date = timeago.format(data.created_at);
     
     //framework for each tweet in tweet list
     const $markup = `
@@ -31,28 +35,28 @@ $(document).ready(function() {
       </article>
       `;
     return $markup;
-  }
+  };
   //make a list of tweets (newest to oldest), append to tweet container
   const renderTweets = tweets => {
     const listOfTweets = [];
-    for (element of tweets) {
+    for (let element of tweets) {
       listOfTweets.push(createTweetElement(element));
     }
     $('#tweet-container').empty();
     $("#tweet-container").append(listOfTweets.reverse().join(' '));
-  }
+  };
   //ajax get request for list of tweets
   const loadTweets = () => {
     $.ajax({
-      url: '/tweets/', 
+      url: '/tweets/',
       method: 'GET',
       dataType: 'json',
       success: response => {
         renderTweets(response);
-      } 
-    })
-  }
-  //call loadTweets
+      }
+    });
+  };
+  //fill page with current tweet list
   loadTweets();
   
   //button to reveal hidden new-tweet element or vice versa
@@ -63,7 +67,7 @@ $(document).ready(function() {
       $(".new-tweet").addClass("#show").slideDown('slow');
       $("#new-tweet-form textarea").focus();
     }
-  })
+  });
     
   //when form is submitted, validate tweet and either load or send error
   $("#new-tweet-form").on("submit", function(e) {
@@ -83,7 +87,7 @@ $(document).ready(function() {
         return false;
       
       } else return true;
-    }
+    };
     if (checkTweetValidity()) {
       $.ajax({
         url: '/tweets/',
@@ -92,11 +96,11 @@ $(document).ready(function() {
         complete: () => {
           loadTweets();
         }
-      })
+      });
       //on successful tweet submission, clear textbox, focus back, and reset counter
       $('#tweet-text').val('');
       $("#new-tweet-form textarea").focus();
       $('.counter').val('140');
     }
-  })
+  });
 });
